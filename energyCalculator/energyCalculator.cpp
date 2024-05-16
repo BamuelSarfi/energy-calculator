@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
+#include <string>
 
 using namespace std;
 
@@ -22,13 +23,18 @@ double elasticPotential(double springConst, double ext) {
 
 }
 
-int begin(bool isFinish)
+static int begin(bool isFinish)
 {
+	string choice;
 	int num;
 	cout << "**WELCOME TO ENERGY CALCULATOR.**\n";
-	cout << "enter '1' for kinetic energy, '2' for gravitational potential energy, and '3' for elastic potential energy.\n";
+	cout << "enter '1' for kinetic energy, '2' for gravitational potential energy, and '3' for elastic potential energy.\nTo exit, simply type 'exit'.\n";
 	cout << "Enter here >>> ";
 	cin >> num;
+	
+
+
+
 
 	if (num == 1) {
 		double mass, velocity;
@@ -56,7 +62,7 @@ int begin(bool isFinish)
 			isFinish = true;
 
 		}
-
+		return 0;
 	}
 	else if (num == 2) {
 		double mass, gravField, height = NULL;
@@ -88,7 +94,7 @@ int begin(bool isFinish)
 			isFinish = true;
 
 		}
-
+		return 0;
 	}
 	else if (num == 3) {
 		double springConst;
@@ -119,13 +125,14 @@ int begin(bool isFinish)
 
 		}
 
-
+		return 0;
 
 	}
 	else {
 		cout << "Enter a number between 1 and 3";//update everytime you add a calculation. 
 		return 8;
 	}
+	return 0;
 }
 
 //kinetic energy: 0.5 * m * v^2
