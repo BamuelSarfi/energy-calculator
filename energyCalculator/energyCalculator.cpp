@@ -20,24 +20,20 @@ double elasticPotential(double springConst, double ext) {
 	return 0.5 * springConst * ext;
 
 }
+int begin() {
 
-//kinetic energy: 0.5 * m * v^2
-//gpe = m * g * h
-//epe = 0.5 * k * e^2
-
-int main()
-{
 	int num;
-	bool isFinish = false;
+	
 
 	cout << "**WELCOME TO ENERGY CALCULATOR.**\n";
-	cout << "enter '1' for kinetic energy, '2' for gravitational potential energy, and '3' for elastic potential energy.\n";
+	cout << "enter '1' for kinetic energy, '2' for gravitational potential energy, and '3' for elastic potential energy.\nHit 'ESC' to escape\n";
 	cout << "Enter here >>> ";
 	cin >> num;
 
+
 	if (num == 1) {
+		
 		double mass, velocity;
-		bool isFinish;
 
 		cout << "enter mass(g): ";
 		cin >> mass;
@@ -52,20 +48,16 @@ int main()
 
 		if (nearbyint(kineticEnergy(mass, velocity)) != kineticEnergy(mass, velocity)) {
 
-			cout << "Rounded result: " << nearbyint(kineticEnergy(mass, velocity));
-			isFinish = true;
+			cout << "Rounded result: " << nearbyint(kineticEnergy(mass, velocity)) << endl;
+
 
 		}
-		else {
-
-			isFinish = true;
-
-		}
+		//adding returns to check later.
+		return 8;
 
 	}
 	else if (num == 2) {
 		double mass, gravField, height;
-		bool isFinish;
 
 		cout << "enter mass: ";
 		cin >> mass;
@@ -82,22 +74,16 @@ int main()
 
 		if (gravitationalPotential(mass, gravField, height) != nearbyint(gravitationalPotential(mass, gravField, height))) {
 
-			cout << "Rounded result: " << nearbyint(gravitationalPotential(mass, gravField, height));
-			isFinish = true;
-
+			cout << "Rounded result: " << nearbyint(gravitationalPotential(mass, gravField, height)) << endl;
 
 		}
-		else {
-
-			isFinish = true;
-
-		}
+		//adding returns to check later.
+		return 8;
 
 	}
 	else if (num == 3) {
-		double springConst;
-		double ext;
-		bool isFinish;
+		double springConst, ext;
+		
 
 		cout << "enter spring constant: ";
 		cin >> springConst;
@@ -113,27 +99,29 @@ int main()
 
 		if (elasticPotential(springConst, ext) != nearbyint(elasticPotential(springConst, ext))) {
 
-			cout << "Rounded Result: " << nearbyint(elasticPotential(springConst, ext));
-			isFinish = true;
+			cout << "Rounded Result: " << nearbyint(elasticPotential(springConst, ext)) << endl;
+
 
 		}
-		else {
-
-			isFinish = true;
-
-		}
-
+		//replace isFinish w/ return 8.
+		return 8;
 
 
 	}
 
+	return 0;
+}
 
-	if (isFinish == true) {
+//kinetic energy: 0.5 * m * v^2
+//gpe = m * g * h
+//epe = 0.5 * k * e^2
 
-		cout << "tick";
-		isFinish = false;
-		return 8;
-
+int main()
+{
+	
+	begin();
+	if (begin() == 8) {
+		begin();
 	}
 
 	return 0;
