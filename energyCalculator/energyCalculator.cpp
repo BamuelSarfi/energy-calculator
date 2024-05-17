@@ -26,7 +26,7 @@ int begin() {
 	
 
 	cout << "**WELCOME TO ENERGY CALCULATOR.**\n";
-	cout << "enter '1' for kinetic energy, '2' for gravitational potential energy, and '3' for elastic potential energy.\nHit 'ESC' to escape\n";
+	cout << "Enter '1' for kinetic energy, '2' for gravitational potential energy, and '3' for elastic potential energy.\nHit 'ESC' to escape\n";
 	cout << "Enter here >>> ";
 	cin >> num;
 
@@ -35,15 +35,15 @@ int begin() {
 		
 		double mass, velocity;
 
-		cout << "enter mass(g): ";
+		cout << "Enter mass(g): ";
 		cin >> mass;
 
-		cout << "enter velocity(m/s): ";
+		cout << "Enter velocity(m/s): ";
 		cin >> velocity;
 
 		kineticEnergy(mass, velocity);
 
-		cout << "Result : " << kineticEnergy(mass, velocity) << endl;
+		cout << "Result: " << kineticEnergy(mass, velocity) << endl;
 
 
 		if (nearbyint(kineticEnergy(mass, velocity)) != kineticEnergy(mass, velocity)) {
@@ -59,18 +59,18 @@ int begin() {
 	else if (num == 2) {
 		double mass, gravField, height;
 
-		cout << "enter mass: ";
+		cout << "Enter mass(g): ";
 		cin >> mass;
 
-		cout << "enter gravitational field: ";
+		cout << "Enter gravitational field(N/kg): ";
 		cin >> gravField;
 
-		cout << "enter height: ";
+		cout << "Enter height(m): ";
 		cin >> height;
 
 		gravitationalPotential(mass, gravField, height);
 
-		cout << "Result :" << gravitationalPotential(mass, gravField, height) << endl;
+		cout << "Result:" << gravitationalPotential(mass, gravField, height) << endl;
 
 		if (gravitationalPotential(mass, gravField, height) != nearbyint(gravitationalPotential(mass, gravField, height))) {
 
@@ -85,10 +85,10 @@ int begin() {
 		double springConst, ext;
 		
 
-		cout << "enter spring constant: ";
+		cout << "Enter spring constant(N/m): ";
 		cin >> springConst;
 
-		cout << "enter spring extention: ";
+		cout << "Enter spring extention(m): ";
 		cin >> ext;
 
 
@@ -122,6 +122,10 @@ int main()
 	begin();
 	if (begin() == 8) {
 		begin();
+	}
+	else {
+		cout << "Thanks for using energy-calculator";
+		return 0;
 	}
 
 	return 0;
