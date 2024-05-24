@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <cmath>
 #include <string>
+#include <conio.h>
 
 using namespace std;
 
@@ -25,13 +26,15 @@ double elasticPotential(double springConst, double ext) {
 int begin() {
 
 	int num;
+	char escKey;
 	
 
 	cout << "**WELCOME TO ENERGY CALCULATOR.**\n";
-	cout << "Enter '1' for kinetic energy, '2' for gravitational potential energy, and '3' for elastic potential energy.\nHit 'ESC' to escape\n";
+	cout << "Enter '1' for kinetic energy, '2' for gravitational potential energy, and '3' for elastic potential energy.\nHit 'e' and then 'Return' to escape.\n";
 	cout << "Enter here >>> ";
 	cin >> num;
-
+	
+	
 
 	if (num == 1) {
 		
@@ -110,11 +113,12 @@ int begin() {
 
 
 	}
+	
 
 	return 0;
 }
 
-//kinetic energy: 0.5 * m * v^2
+//kinetic energy: 0.5 * m * v^2s
 //gpe = m * g * h
 //epe = 0.5 * k * e^2
 
@@ -122,12 +126,12 @@ int main()
 {
 	
 	begin();
-	if (begin() == 8) {
-		begin();
+	if (begin() != 8) {
+		cout << "\n**THANK YOU FOR USING ENERGY CALCULATOR**";
+		return 0;
 	}
 	else {
-		cout << "Thanks for using energy-calculator";
-		return 0;
+		begin();
 	}
 
 	return 0;
